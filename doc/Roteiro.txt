@@ -1,0 +1,10 @@
+1 - Criando o projeto com algumas coisas ja pre-instaladas
+    -> yarn create react-app NOME
+
+2 - Instalando o EsLint, Prettier e padrões de codigo
+    -> yarn add eslint -D
+    -> yarn eslint --init  (cria o arquivo de config, responder as perguntas)
+    * apagar o arquivo package-lock.json, e rodar o comando:
+    -> yarn
+    * Faz isso pq o Eslint instala como NPM e com isso acima, alteramos para forma YARN
+    -> yarn add prettier eslint-config-prettier eslint-plugin-prettier babel-eslint -D
