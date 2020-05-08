@@ -26,6 +26,7 @@ module.exports = {
     'prettier'
   ],
   rules: {
+      'max-len': ['error', { 'code': 125 }],
       'prettier/prettier': 'error',
       'react/jsx-filename-extension': ['warn', { extensions: ['.jsx','.js'] }],
       'import/prefer-default-export': 'off'
