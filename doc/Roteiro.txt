@@ -15,3 +15,9 @@
 4 - Componentes Estilizados (CSS melhorado para React)
     -> yarn add styled-components
     * Instalar extensão no VSCode "Styled components"
+
+5 - Iniciando Estilização
+    -> yarn add react-icons   (Icones diversos)
+
+6 - Consulta de API (github)
+    -> yarn add axios
