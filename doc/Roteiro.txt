@@ -11,3 +11,7 @@
 
 3 - Roteamento no front-end
     -> yarn add react-router-dom
+
+4 - Componentes Estilizados (CSS melhorado para React)
+    -> yarn add styled-components
+    * Instalar extensão no VSCode "Styled components"
