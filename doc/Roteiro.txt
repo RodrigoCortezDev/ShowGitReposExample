@@ -8,3 +8,6 @@
     -> yarn
     * Faz isso pq o Eslint instala como NPM e com isso acima, alteramos para forma YARN
     -> yarn add prettier eslint-config-prettier eslint-plugin-prettier babel-eslint -D
+
+3 - Roteamento no front-end
+    -> yarn add react-router-dom
