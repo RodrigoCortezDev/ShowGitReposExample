@@ -35,7 +35,7 @@ export default class Main extends Component {
     // Evento de consultar o Git
     handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Consultou');
+        // console.log('Consultou');
         const { newRepo, repositories } = this.state;
 
         this.setState({ loading: true });
