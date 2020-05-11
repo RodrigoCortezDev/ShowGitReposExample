@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// Caixa branca que envolve o conteudo
 const Container = styled.div`
     max-width: 700px;
     background: #fff;

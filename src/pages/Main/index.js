@@ -37,22 +37,28 @@ export default class Main extends Component {
     // Evento de consultar o Git
     handleSubmit = async (e) => {
         e.preventDefault();
-        // console.log('Consultou');
+
         const { newRepo, repositories } = this.state;
 
-        this.setState({ loading: true });
-
-        const response = await api.get(`/repos/${newRepo}`);
-
-        const data = {
-            name: response.data.full_name,
-        };
-
-        this.setState({
-            repositories: [...repositories, data],
-            newRepo: '',
-            loading: false,
-        });
+        try {
+            // Setando a variavel para aguarde
+            this.setState({ loading: true });
+            // Realizando a consulta
+            const response = await api.get(`/repos/${newRepo}`);
+            // Recuperando do JSON de retorno, o fullname
+            const data = { name: response.data.full_name };
+            // Realizando a inserção no array, caso dê certo
+            this.setState({
+                repositories: [...repositories, data],
+                newRepo: '',
+                loading: false,
+            });
+        } catch (error) {
+            this.setState({
+                newRepo: '',
+                loading: false,
+            });
+        }
     };
 
     // Renderizando a tela

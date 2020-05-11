@@ -18,21 +18,27 @@ class Repository extends Component {
         const { match } = this.props;
         const repoName = decodeURIComponent(match.params.repository);
 
-        const [repository, issues] = await Promise.all([
-            api.get(`/repos/${repoName}`),
-            api.get(`/repos/${repoName}/issues`, {
-                params: {
-                    state: 'open',
-                    per_page: 5,
-                },
-            }),
-        ]);
+        try {
+            const [repository, issues] = await Promise.all([
+                api.get(`/repos/${repoName}`),
+                api.get(`/repos/${repoName}/issues`, {
+                    params: {
+                        state: 'open',
+                        per_page: 5,
+                    },
+                }),
+            ]);
 
-        this.setState({
-            repository: repository.data,
-            issues: issues.data,
-            loading: false,
-        });
+            this.setState({
+                repository: repository.data,
+                issues: issues.data,
+                loading: false,
+            });
+        } catch (error) {
+            this.setState({
+                loading: false,
+            });
+        }
     }
 
     render() {
