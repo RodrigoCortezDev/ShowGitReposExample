@@ -21,3 +21,6 @@
 
 6 - Consulta de API (github)
     -> yarn add axios
+
+7 - Biblioteca que faz a definição das propriedades passadas por parametro
+    -> yarn add prop-types
