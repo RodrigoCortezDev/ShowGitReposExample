@@ -7,13 +7,24 @@ import { Loading, Owner, IssueList } from './styles';
 import Container from '../../Components/Container';
 
 // Classe que representa a exibição do repositorio vindo por parametro
-class Repository extends Component {
+export default class Repository extends Component {
+    // Definindo a estrutura dos parametros que essa rota aceita
+    static propTypes = {
+        match: PropTypes.shape({
+            params: PropTypes.shape({
+                repository: PropTypes.string,
+            }),
+        }).isRequired,
+    };
+
+    //Controles de estado
     state = {
         repository: {},
         issues: [],
         loading: true,
     };
 
+    //Ao inicializar a pagina
     async componentDidMount() {
         const { match } = this.props;
         const repoName = decodeURIComponent(match.params.repository);
@@ -77,14 +88,3 @@ class Repository extends Component {
         );
     }
 }
-
-// Definindo a estrutura dos parametros que essa rota aceita
-Repository.propTypes = {
-    match: PropTypes.shape({
-        params: PropTypes.shape({
-            repository: PropTypes.string,
-        }),
-    }).isRequired,
-};
-
-export default Repository;
